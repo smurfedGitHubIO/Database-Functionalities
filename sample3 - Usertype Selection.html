@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Usertype Selection</title>
+	<script type="text/javascript">
+		function run() {
+			if(document.getElementById('check').value === "guardian" || document.getElementById('check').value === "expert")
+				addOptions();
+			else
+				removeOptions();
+		}
+		function addOptions(){
+			document.getElementById('additionalOption').innerHTML = "<input type=\"text\" name=\"connection\">";
+		}
+		function removeOptions(){
+			document.getElementById('additionalOption').innerHTML = "";
+		}
+	</script>
+</head>
+<body>
+	<select id="check" onchange="run()">
+		<option value="player">PLAYER</option>
+		<option value="guardian">GUARDIAN</option>
+		<option value="expert">EXPERT</option>
+	</select>
+	<div id="additionalOption"></div>
+</body>
+</html>
